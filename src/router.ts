@@ -1,0 +1,23 @@
+import express from 'express';
+import { Cover, Offre, Annonce, Demande, Contact, Credit, Compte, TypeClient, PrendreRendez, Client, TypeDemande, Publication } from './routing';
+export const router = express.Router();
+
+router.get('/cover', Cover.index);
+router.get('/offre', Offre.limit);
+router.get('/annonce', Annonce.index);
+router.get('/annonce-viewer', Annonce.where);
+router.get('/credit', Credit.index);
+router.get('/tokenizeauth', Client.index);
+router.get('/compte', Compte.index);
+router.get('/typeclient', TypeClient.index);
+router.get('/typedemande', TypeDemande.index);
+router.post('/contact', Contact.index);
+router.post('/client-rendez', PrendreRendez.index);
+router.get('/rendeznumber', PrendreRendez.getNumber);
+router.post('/enreg-client', Client.save);
+router.get('/client', Client.index);
+router.get('/loggin', Client.loggin);
+router.post('/demande', Demande.index);
+router.get('/demande', Demande.dernierDemande);
+router.get('/publication', Publication.index);
+router.get('/demandeall', Demande.allDemande);
