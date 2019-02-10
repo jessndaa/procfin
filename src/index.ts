@@ -15,7 +15,7 @@ try {
     app.use(cors());
     app.use(express.static(path.join(__dirname,'public')));
     app.use('/api', router);
-    app.get(/[^api][^api][^api]$.*/, (req, res) => {
+    app.get('**', (req, res) => {
         res.sendfile(path.join(__dirname,'front/index.html'));
     })   
 } catch (error) {
